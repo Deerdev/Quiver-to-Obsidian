@@ -55,6 +55,13 @@ q2o -q /xxx/quiver.qvlibrary -o /xxx/output -e awebp green
 ![](resources/FFF4283081EF04C144EF122E5B894D2C.png)
 ![](resources/DDD5283081EF04C144EF122E5B894D3C.png)
 ```
+## Update
+
+Update this command-line:
+
+```
+npm update -g quiver-to-obsidian
+```
 
 ## Uninstall
 
