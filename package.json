@@ -1,0 +1,52 @@
+{
+  "name": "quiver-to-obsidian",
+  "version": "1.0.0",
+  "description": "Convert quiver libraray to obsidian library",
+  "homepage": "https://github.com/Deerdev/Quiver-to-Obsidian",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Deerdev/Quiver-to-Obsidian"
+  },
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/**/*.d.ts",
+  "bin": {
+    "q2o": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ./dist && tsc --project ./",
+    "start": "ts-node ./src/index.ts"
+  },
+  "author": "DeerDev",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^17.0.21",
+    "@types/ora": "^3.2.0",
+    "@types/progress": "^2.0.5",
+    "@types/turndown": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.4",
+    "eslint-plugin-import": "^2.25.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "files": [
+    "dist/**/*",
+    "!dist/**/*.map"
+  ],
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.1.0",
+    "fs-extra": "^10.0.1",
+    "ora": "^6.1.0",
+    "progress": "^2.0.3",
+    "turndown": "^7.1.1",
+    "utimes": "^5.1.1"
+  }
+}
