@@ -7,6 +7,14 @@
     "type": "git",
     "url": "https://github.com/Deerdev/Quiver-to-Obsidian"
   },
+  "keywords": [
+    "quiver",
+    "obsidian",
+    "quiver to obsidian",
+    "QuiverToObsidian",
+    "quiver 2 obsidian",
+    "quiver2obsidian"
+  ],
   "type": "module",
   "exports": "./dist/index.js",
   "types": "./dist/**/*.d.ts",
