@@ -20,7 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf ./dist && tsc --project ./",
     "start": "ts-node ./src/index.ts",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "release": "standard-version",
     "patch": "npm run release -- --release-as patch"
   },
