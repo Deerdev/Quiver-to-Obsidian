@@ -7,24 +7,20 @@
     "type": "git",
     "url": "https://github.com/Deerdev/Quiver-to-Obsidian"
   },
-  "keywords": [
-    "quiver",
-    "obsidian",
-    "quiver to obsidian",
-    "QuiverToObsidian",
-    "quiver 2 obsidian",
-    "quiver2obsidian"
-  ],
   "type": "module",
   "exports": "./dist/index.js",
   "types": "./dist/**/*.d.ts",
   "bin": {
     "q2o": "./dist/index.js"
   },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf ./dist && tsc --project ./",
-    "start": "ts-node ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "prepublish": "npm run build"
   },
   "author": "DeerDev",
   "license": "MIT",
@@ -55,5 +51,13 @@
     "progress": "^2.0.3",
     "turndown": "^7.1.1",
     "utimes": "^5.1.1"
-  }
+  },
+  "keywords": [
+    "quiver",
+    "obsidian",
+    "quiver to obsidian",
+    "QuiverToObsidian",
+    "quiver 2 obsidian",
+    "quiver2obsidian"
+  ]
 }
