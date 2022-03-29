@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/Deerdev/Quiver-to-Obsidian/compare/v1.0.4...v1.0.5) (2022-03-29)
+
+
+### Bug Fixes
+
+* fix loading time, and await all files wrote ([055bc5c](https://github.com/Deerdev/Quiver-to-Obsidian/commit/055bc5cec7d92c86e90b263a66cdbcda5cdd74c9))
+
 ### [1.0.4](https://github.com/Deerdev/Quiver-to-Obsidian/compare/v1.0.3...v1.0.4) (2022-03-29)
 
 
