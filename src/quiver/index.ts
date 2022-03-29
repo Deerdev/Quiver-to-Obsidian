@@ -1,7 +1,7 @@
 import fse from 'fs-extra';
 import * as path from 'path';
 import ProgressBar from 'progress';
-import ora from 'ora';
+import ora, {Ora} from 'ora';
 import TurndownService from 'turndown';
 import { utimes } from 'utimes';
 import {
@@ -23,6 +23,7 @@ class Quiver {
   private needReplaceExtNames?: string[];
 
   private bar?: ProgressBar;
+  private spinner?: Ora
 
   private constructor(library: QvLibrary, extNames: string[] | undefined) {
     this.library = library;
@@ -45,7 +46,7 @@ class Quiver {
     // add `quiver` to output path
     this.outputQuiverPath = path.join(outputPath, 'quiver');
 
-    const spinner = ora('Reading library...').start();
+    this.spinner = ora('Reading library...').start();
     this.walkThroughNotebookHierarchty((notebook, parents) => {
       const newPathList = [this.outputQuiverPath];
       parents.forEach((parentNotebook) => {
@@ -68,7 +69,6 @@ class Quiver {
         this.newNotePathRecord[note.meta.uuid] = path.join(newPath, `${noteName}.md`);
       });
     });
-    spinner.stop();
     this.noteCount = Object.keys(this.newNotePathRecord).length;
     this.bar = new ProgressBar('Processing [:bar] :current/:total', { total: this.noteCount });
     await this.writeLibrary();
@@ -118,7 +118,7 @@ class Quiver {
   }
 
   private async writeNote(note: QvNote, newNotePath: string): Promise<void> {
-    this.writeNoteToMarkdown(note, newNotePath);
+    await this.writeNoteToMarkdown(note, newNotePath);
     if (note.resources) {
       const resourceDirPath = path.join(this.outputQuiverPath, 'resources');
       prepareDirectory(resourceDirPath);
@@ -128,6 +128,10 @@ class Quiver {
         const dstPath = path.join(resourceDirPath, fileName);
         await fse.copyFile(srcPath, dstPath);
       }));
+    }
+    if (this.spinner) {
+      this.spinner.stop();
+      this.spinner = undefined;
     }
     this.bar?.tick();
   }
