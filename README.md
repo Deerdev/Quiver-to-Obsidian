@@ -3,14 +3,14 @@
 
 ![cover](https://raw.github.com/Deerdev/Quiver-to-Obsidian/main/cover.png)
 
-It's a node.js CLI to convert a Quiver library to an Obsidian library.
+`Quiver-to-Obsidian` is a node.js CLI to convert a Quiver library to an Obsidian library.
 
 ## Features
 
 - Convert all the Quiver notes to markdown files
-  - Also convert the content of the text cell to markdown
+  - Also convert the text cell of the content to markdown
 - Move all the resource files to the root dir `resources` of the new Obsidian library
-- Add default extra png to the resource file which is missing file extension
+- Add default file extension `.png` to the resource file which is missing file extension
 - [Option] Replace some unknown image ext to png
 
 ## Install
@@ -29,14 +29,14 @@ Usage: q2o [options]
 Options:
   -q, --quiver-path <path>  quiver library dir path
   -o, --output-path <path>  output dir path
-  -e, --ext-names [ext...]  [option] replace some unknown resource image ext to `png`
+  -e, --ext-names [ext...]  [option] replace some unknown resource image file ext to `png`
   -h, --help                display help for command
 ```
 
 Run the command below:
 
 ```
-q2o -q <quiver-library-dir-path> -o <output-dir-path> -e 0-green awebp
+q2o -q <quiver-library-dir-path> -o <output-dir-path>
 ```
 
 If you want to replace some resource file extension to `.png`, add parameter `-e`, for example, I want to replace `.awebp` and `.green` to `.png`, run the command below:
@@ -81,4 +81,4 @@ Feel free to [Open an issue](https://github.com/Deerdev/Quiver-to-Obsidian/issue
 
 ## License
 
-[MIT](LICENSE) © Richard Littauer
+[MIT](LICENSE) © DeerDev

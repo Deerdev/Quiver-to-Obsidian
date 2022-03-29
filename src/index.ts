@@ -9,7 +9,7 @@ const { log } = console;
 
 program.requiredOption('-q, --quiver-path <path>', 'quiver library dir path')
   .requiredOption('-o, --output-path <path>', 'output dir path')
-  .option('-e, --ext-names [ext...]', '[option] replace some unknown resource image ext to `png`');
+  .option('-e, --ext-names [ext...]', '[option] replace some unknown resource image file ext to `png`');
 program.showHelpAfterError();
 
 program.parse(process.argv);
