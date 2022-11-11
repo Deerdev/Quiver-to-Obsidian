@@ -8,10 +8,10 @@
 ## Features
 
 - Convert all the Quiver notes to markdown files
-  - Also convert the text cell of the content to markdown
+  - Also, convert the text cell of the content to markdown
 - Move all the resource files to the root dir `resources` of the new Obsidian library
 - Add default file extension `.png` to the resource file which is missing file extension
-- Overwrite the new markdown file's created time and updated time with the quiver note file's time
+- Overwrite the created time and updated time of the new markdown file, same with the quiver note file's time
 - [Option] Replace some unknown image ext to png
 
 ## Install
